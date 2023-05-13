@@ -23,6 +23,17 @@
           "include": "#type"
         },
         {
+          "match": "\\b(createRect|createCircle)\\b",
+          "name": "entity.name.function.alfa"
+        },
+        {
+          "match": ";",
+          "name": "keyword.control.alfa"
+        },
+        {
+          "include": "#num"
+        },
+        {
           "include": "#identifier"
         },
         {
@@ -41,6 +52,10 @@
     "assignment": {
       "match": "=",
       "name": "keyword.control.alfa"
+    },
+    "num": {
+      "match": "\\b(-?0(..)?|-?[1-9][0-9]*(..)?)\\b",
+      "name": "constant.numeric.alfa"
     }
   },
   "scopeName": "source.alfa"
