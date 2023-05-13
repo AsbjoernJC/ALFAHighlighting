@@ -1,7 +1,7 @@
 {
   "name": "alfa",
-  "displayName": "ALFA",
-  "description": "Another language for animations",
+  "displayName": "alfa",
+  "description": "alfa",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"

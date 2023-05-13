@@ -20,55 +20,14 @@
     "varDcl": {
       "patterns": [
         {
-          "match": "\\b(int|rect)\\b",
-          "name": "keyword.type.alfa"
-        },
-        {
-          "patterns": [
-            {
-              "include": "#builtInCreateShapeCall"
-            },
-            {
-              "match": "-?\\d+",
-              "name": "constant.numeric.integer.alfa"
-            }
-          ]
-        },
-        {
-          "match": ";",
-          "name": "keyword.operator.semicolon.alfa"
+          "include": "#types"
         }
       ]
     },
-    "builtInAnim": {
-      "patterns": [
-        {
-          "match": "\\b(move|wait)\\b",
-          "name": "variable.parameter.alfa"
-        }
-      ]
-    },
-    "builtInAnimCall": {
-      "patterns": [
-        {
-          "include": "#builtInAnim"
-        }
-      ]
-    },
-    "builtInCreateShape": {
-      "patterns": [
-        {
-          "match": "\\b(createRect)\\b",
-          "name": "storage.modifier.alfa"
-        }
-      ]
-    },
-    "builtInCreateShapeCall": {
-      "patterns": [
-        {
-          "include": "#builtInCreateShape"
-        }
-      ]
+    "types": {
+      "match": "\\b(int|rect)\\b",
+      "name": "keyword.type.alfa"
     }
-  }
+  },
+  "scopeName": "source.alfa"
 }
