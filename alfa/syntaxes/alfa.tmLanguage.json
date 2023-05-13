@@ -20,13 +20,27 @@
     "varDcl": {
       "patterns": [
         {
-          "include": "#types"
+          "include": "#type"
+        },
+        {
+          "include": "#identifier"
+        },
+        {
+          "include": "#assignment"
         }
       ]
     },
-    "types": {
+    "type": {
       "match": "\\b(int|rect)\\b",
       "name": "keyword.type.alfa"
+    },
+    "identifier": {
+      "match": "\\b[a-zA-Z_]\\w*\\b",
+      "name": "variable.name.alfa"
+    },
+    "assignment": {
+      "match": "=",
+      "name": "keyword.control.alfa"
     }
   },
   "scopeName": "source.alfa"
