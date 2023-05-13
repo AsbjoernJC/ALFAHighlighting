@@ -10,10 +10,10 @@
     "statement": {
       "patterns": [
         {
-          "include": "#varDcl"
+          "include": "#builtInAnimCall"
         },
         {
-          "include": "#builtInAnimCall"
+          "include": "#varDcl"
         }
       ]
     },
@@ -62,6 +62,11 @@
     "num": {
       "match": "\\b(-?0(..)?|-?[1-9][0-9]*(..)?)\\b",
       "name": "constant.numeric.alfa"
+    },
+
+    "builtInAnimCall": {
+      "match": "\\b(move|wait)\\b",
+      "name": "entity.name.function"
     }
   },
   "scopeName": "source.alfa"
