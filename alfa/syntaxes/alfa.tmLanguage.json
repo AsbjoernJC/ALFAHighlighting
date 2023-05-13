@@ -1,0 +1,74 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ALFA",
+  "patterns": [
+    {
+      "include": "#statement"
+    }
+  ],
+  "repository": {
+    "statement": {
+      "patterns": [
+        {
+          "include": "#varDcl"
+        },
+        {
+          "include": "#builtInAnimCall"
+        }
+      ]
+    },
+    "varDcl": {
+      "patterns": [
+        {
+          "match": "\\b(int|rect)\\b",
+          "name": "keyword.type.alfa"
+        },
+        {
+          "patterns": [
+            {
+              "include": "#builtInCreateShapeCall"
+            },
+            {
+              "match": "-?\\d+",
+              "name": "constant.numeric.integer.alfa"
+            }
+          ]
+        },
+        {
+          "match": ";",
+          "name": "keyword.operator.semicolon.alfa"
+        }
+      ]
+    },
+    "builtInAnim": {
+      "patterns": [
+        {
+          "match": "\\b(move|wait)\\b",
+          "name": "variable.parameter.alfa"
+        }
+      ]
+    },
+    "builtInAnimCall": {
+      "patterns": [
+        {
+          "include": "#builtInAnim"
+        }
+      ]
+    },
+    "builtInCreateShape": {
+      "patterns": [
+        {
+          "match": "\\b(createRect)\\b",
+          "name": "storage.modifier.alfa"
+        }
+      ]
+    },
+    "builtInCreateShapeCall": {
+      "patterns": [
+        {
+          "include": "#builtInCreateShape"
+        }
+      ]
+    }
+  }
+}

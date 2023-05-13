@@ -1,0 +1,25 @@
+{
+  "name": "alfa",
+  "displayName": "ALFA",
+  "description": "Another language for animations",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "alfa",
+      "aliases": ["ALFA", "alfa"],
+      "extensions": [".alfa"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "alfa",
+      "scopeName": "source.alfa",
+      "path": "./syntaxes/alfa.tmLanguage.json"
+    }]
+  }
+}
