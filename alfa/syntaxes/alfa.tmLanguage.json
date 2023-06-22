@@ -13,6 +13,9 @@
           "include": "#builtInAnimCall"
         },
         {
+          "include": "#controlStructs"
+        },
+        {
           "include": "#varDcl"
         }
       ]
@@ -25,15 +28,22 @@
         {
           "patterns": [
             {
-              "include": "#identifier"
+              "include": "#assignment"
             },
             {
               "patterns": [
                 {
-                  "include": "#builtInCreateShapeCall"
+                  "include": "#identifier"
                 },
                 {
-                  "include": "#num"
+                  "patterns": [
+                    {
+                      "include": "#builtInCreateShapeCall"
+                    },
+                    {
+                      "include": "#num"
+                    }
+                  ]
                 }
               ]
             }
@@ -54,6 +64,11 @@
 
     "assignment": {
       "match": "=",
+      "name": "keyword.control.alfa"
+    },
+
+    "controlStructs": {
+      "match": "\\b(if|else|else if|loop|paral)\\b",
       "name": "keyword.control.alfa"
     },
 
