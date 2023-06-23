@@ -53,7 +53,7 @@
     },
 
     "type": {
-      "match": "\\b(int|rect)\\b",
+      "match": "\\b(int|rect|bool|true|false)\\b",
       "name": "keyword.type.alfa"
     },
 

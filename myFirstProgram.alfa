@@ -1,37 +1,20 @@
- #Same rect moved in paral
- 
- rect myRect1 = createRect(100,100,60,60);
- rect myRect2 = createRect(100,100,60,60);
- rect myRect3 = createRect(100,100,60,60);
- int offset = 50;
- int duration = 200;
- 
- loop(int i from 1 .. 10 ) {
-     paral{
-         move(myRect1, offset, 0, duration);
-         move(myRect3, 0, offset, duration);
-     }
-     paral{
-               move(myRect1, 0, offset, duration);
-               move(myRect3, offset, 0, duration);
-     }
-     
-     if(i % 2 == 0) {
-             move(myRect2, 2*offset, 2*offset, duration);
-     }
- }
- 
- loop(int j from 1 .. 10 ) {
-     paral{
-               move(myRect1, 0, -offset, duration);
-               move(myRect3, -offset, 0, duration);
-     }
-     paral{
-         move(myRect1, -offset, 0, duration);
-         move(myRect3, 0, -offset, duration);
-     }
-     
-     if(j % 2 == 0) {
-             move(myRect2, 2* (-offset), 2* (-offset), duration); 
-     }
- }
+rect myRect1 = createRect(200, 100, 100, 100);
+rect myRect2 = createRect(200, 100, 100, 100);
+rect myRect3 = createRect(200, 100, 100, 100);
+int offSet = 100;
+bool changedDir = false;
+loop(int i from 1 .. 8) {
+    if(i >= 5 and !changedDir) {
+        offSet = -offSet;
+        changedDir = true;
+    }
+    paral {
+        move(myRect2, offSet, 0, 400);
+        move(myRect3, -offSet, offSet, 400);
+    }
+    paral {
+        move(myRect2, -offSet, offSet - offSet, 400);
+        move(myRect3, offSet, offSet - offSet, 400);
+    }
+    move(myRect1, 0, offSet, 1000);
+}
