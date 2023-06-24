@@ -3,12 +3,96 @@
   "name": "ALFA",
   "patterns": [
     {
+      "include": "#comment"
+    },
+    {
       "include": "#statement"
+    },
+    {
+      "include": "#animation"
     }
   ],
   "repository": {
+    "comment": {
+      "match": "#.*$",
+      "name": "comment.line.double-slash.alfa"
+    },
+    "animation": {
+      "match": "\\b(animation)\\b",
+      "name": "keyword.control.alfa"
+    },
+    "paralBlock": {
+      "begin": "paral ",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.type.alfa"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.block.end.alfa"
+        }
+      },
+      "name": "meta.block.alfa",
+      "patterns": [
+        {
+          "begin": "{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.block.begin.alfa"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#builtInAnimCall"
+            },
+            {
+              "include": "#animIdentifier"
+            },
+            {
+              "include": "#statement"
+            }
+          ],
+          "end": ""
+        }
+      ]
+    },
+
+    "animIdentifier": {
+      "match": "\\b[a-zA-Z_]\\w*\\(\\b",
+      "name": "keyword.other.unit.alfa"
+    },
+
+    "block": {
+      "begin": "{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.section.block.begin.alfa"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.block.end.alfa"
+        }
+      },
+      "name": "meta.block.alfa",
+      "patterns": [
+        {
+          "include": "#statement"
+        }
+      ]
+    },
+
     "statement": {
       "patterns": [
+        {
+          "include": "#animation"
+        },
+        {
+          "include": "#paralBlock"
+        },
         {
           "include": "#builtInAnimCall"
         },
@@ -68,7 +152,7 @@
     },
 
     "controlStructs": {
-      "match": "\\b(if|else|else if|loop|paral)\\b",
+      "match": "\\b(if|else|else if|loop)\\b",
       "name": "keyword.control.alfa"
     },
 
