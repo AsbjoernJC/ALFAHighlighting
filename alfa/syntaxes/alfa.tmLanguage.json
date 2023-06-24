@@ -6,10 +6,10 @@
       "include": "#comment"
     },
     {
-      "include": "#statement"
+      "include": "#animation"
     },
     {
-      "include": "#animation"
+      "include": "#statement"
     }
   ],
   "repository": {
