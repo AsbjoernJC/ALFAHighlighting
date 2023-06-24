@@ -1,0 +1,31 @@
+#Plays animations in parallel sequentially​
+
+int len = 40;​
+int xPos = 0;​
+rect myRect1 = createRect(xPos,0,len,len);​
+rect myRect2 = createRect(xPos,50,len,len);​
+​
+int offset1 = 500;​
+int offset2 = 500;​
+int duration = 500​
+​
+animation rect1Move(rect rect1, int offset1, int duration) {​
+    move(rect1, offset, 0, duration);​
+    move(rect1, -offset, 0, duration);​
+
+}​
+
+animation rect2Move(rect rect2, int offset1, int duration) {​
+    move(rect2, offset, 0, duration);​
+    move(rect2, 0, offset, duration);​
+    move(rect2, -offset, 0, duration);​
+    move(rect2, 0, -offset, duration);​
+
+}​
+
+loop (int i from 0 .. 20) {​
+    paral {​
+        rect1Move(myRect1, offset1, duration);​
+        rect2Move(myRect2, offset2, duration);​
+    }​
+}​
