@@ -25,7 +25,7 @@
       "begin": "paral ",
       "beginCaptures": {
         "0": {
-          "name": "keyword.type.alfa"
+          "name": "keyword.control.alfa"
         }
       },
       "end": "}",
@@ -112,9 +112,6 @@
         {
           "patterns": [
             {
-              "include": "#assignment"
-            },
-            {
               "patterns": [
                 {
                   "include": "#identifier"
@@ -144,11 +141,6 @@
     "identifier": {
       "match": "\\b[a-zA-Z_]\\w*\\b",
       "name": "variable.name.alfa"
-    },
-
-    "assignment": {
-      "match": "=",
-      "name": "keyword.control.alfa"
     },
 
     "controlStructs": {
